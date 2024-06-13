@@ -6,6 +6,7 @@ module Text::Wrap {
     Regex :$paragraph = rx/\n ** 2..*/,
     Bool :$hard-wrap = False,
     Str :$prefix = '',
+    Str :$postfix = ''
   ) is export {
     my $result = '';
 
@@ -22,13 +23,13 @@ module Text::Wrap {
             $line ~= $line ?? ' ' ~ $word !! $word;
         }
         else {
-          $result ~= $prefix ~ $line ~ "\n";
+          $result ~= $prefix ~ $line ~ $postfix ~ "\n";
 
           if $hard-wrap {
             my $copy = $word;
 
             while $copy.chars > $width {
-              $result ~= $prefix ~ $copy.substr(0, $width) ~ "\n";
+              $result ~= $prefix ~ $copy.substr(0, $width) ~ $postfix ~ "\n";
               $copy.=substr($width);
             }
 
@@ -40,11 +41,14 @@ module Text::Wrap {
         }
       }
 
-      $result ~= $prefix ~ $line if $line;
+      $result ~= $prefix ~ $line ~ $postfix if $line;
       $result ~= "\n" ~ $prefix ~ "\n" if @paragraphs;
     }
 
-    return $result.trim-leading;
+    $result ~~ s/$postfix$//; # Trailing postfix useless
+    $result ~~ s/^$prefix\n+//;
+
+    return $result;
   }
 }
 
@@ -79,14 +83,17 @@ that are longer than the maximum width. It's off by default, meaning that lines
 may become longer than the maximum width if the text contains words that are
 too long to fit a line.
 
-=item C<<:paragraph(rx/\n ** 2..*/)>> takes a C<<Regex>> object which is used find
-paragraphs in the source text in order to retain them in the result. The
-default is C<<\n ** 2..*>> (two or more consecutive linebreaks). To discard any
-paragraphs from the source text, you can set this to C<<Regex:U>>.
+=item C<<:paragraph(rx/\n ** 2..*/)>> takes a C<<Regex>> object which is used
+to find paragraphs in the source text in order to retain them in the result.
+The default is C<<\n ** 2..*>> (two or more consecutive linebreaks). To discard
+any paragraphs from the source text, you can set this to C<<Regex:U>>.
 
-=tem C<<:prefix('')>> takes a string that's inserted in front of every line of
+=item C<<:prefix('')>> takes a string that's inserted in front of every line of
 the wrapped text. The length of the prefix string counts into the total line
 width, meaning it's subtracted from the given C<<:width>>.
+
+=item C<<:postfix('')>> takes a string that's inserted after every line of
+the wrapped text. Same behavior as C<<prefix>> regarding line width.
 
 =head1 AUTHOR
 

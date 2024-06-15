@@ -15,7 +15,7 @@
   "repo-type": "git",
   "resources": [
   ],
-  "source-url": "https://github.com/tbrowder/p6-text-wrap.git",
+  "source-url": "https://github.com/jkramer/p6-Text-Wrap.git",
   "tags": [
   ],
   "test-depends": [

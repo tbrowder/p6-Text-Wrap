@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions) [![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions) [![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions)
+[![Actions Status](https://github.com/jkramer/p6-Text-Wrap/actions/workflows/linux.yml/badge.svg)](https://github.com/jkramer/p6-Text-Wrap/actions) [![Actions Status](https://github.com/jkramer/p6-Text-Wrap/actions/workflows/macos.yml/badge.svg)](https://github.com/jkramer/p6-Text-Wrap/actions) [![Actions Status](https://github.com/jkramer/p6-Text-Wrap/actions/workflows/windows.yml/badge.svg)](https://github.com/jkramer/p6-Text-Wrap/actions)
 
 NAME
 ====

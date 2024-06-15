@@ -1,17 +1,24 @@
 {
-  "perl" : "6.*",
-  "name" : "Text::Wrap",
-  "license" : "Artistic-2.0",
-  "version" : "0.0.3",
-  "description" : "Wrap text.",
   "auth": "github:jkramer",
-  "author" : "Jonas Kramer <jkramer@mark17.net>",
+  "author": "Jonas Kramer <jkramer@mark17.net>",
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Wrap texts.",
+  "license": "Artistic-2.0",
+  "name": "Text::Wrap",
+  "perl": "6.*",
+  "provides": {
+    "Text::Wrap": "lib/Text/Wrap.rakumod"
+  },
   "repo-type": "git",
-  "source-url" : "git://github.com/jkramer/p6-Text-Wrap.git",
-  "depends" : [],
-  "build-depends" : [],
-  "test-depends" : [],
-  "provides" : {
-    "Text::Wrap" : "lib/Text/Wrap.pm6"
-  }
+  "resources": [
+  ],
+  "source-url": "https://github.com/tbrowder/p6-text-wrap.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.3"
 }

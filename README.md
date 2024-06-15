@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions) [![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions) [![Actions Status](https://github.com/tbrowder/p6-text-wrap/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/p6-text-wrap/actions)
+
 NAME
 ====
 
@@ -22,9 +24,11 @@ Text::Wrap provides a single function `wrap-text` that takes arbitrary text and 
 
   * `:hard-break` makes `wrap-text` break lines in the middle of words that are longer than the maximum width. It's off by default, meaning that lines may become longer than the maximum width if the text contains words that are too long to fit a line.
 
-  * `:paragraph(rx/\n ** 2..*/)` takes a `Regex` object which is used find paragraphs in the source text in order to retain them in the result. The default is `\n ** 2..*` (two or more consecutive linebreaks). To discard any paragraphs from the source text, you can set this to `Regex:U`.
+  * `:paragraph(rx/\n ** 2..*/)` takes a `Regex` object which is used to find paragraphs in the source text in order to retain them in the result. The default is `\n ** 2..*` (two or more consecutive linebreaks). To discard any paragraphs from the source text, you can set this to `Regex:U`.
 
   * `:prefix('')` takes a string that's inserted in front of every line of the wrapped text. The length of the prefix string counts into the total line width, meaning it's subtracted from the given `:width`.
+
+  * `:postfix('')` takes a string that's inserted after every line of the wrapped text. Same behavior as `prefix` regarding line width.
 
 AUTHOR
 ======
@@ -34,6 +38,7 @@ Jonas Kramer <jkramer@mark17.net>
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2016 Jonas Kramer.
+Copyright 2016, 2024 Jonas Kramer.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+

@@ -1,0 +1,13 @@
+Revision history for Text::Wrap
+
+{{$NEXT}}
+    - Added files for App::Mi6 management and 3-OS workflows testing
+      + added Change file with note about converting formats
+    - Converted all Perl6 suffixes to Raku
+    - Added a load test for the single module
+    - Renamed tests with a leading number for ease of debugging
+    - Edited all tests to use variables instead of literals to ease visual assessment and maintenance
+    - Used App::Mi6 capability to generate the README.md file from pod in the module (which fixed some manual translation errors)
+
+0.0.3 2024-06-13
+    - Last release prior to management with 'App::Mi6'
